@@ -1,14 +1,11 @@
-package secao13.polimorfismo.entities;
+package secao13.polimorfismo.myideias.entities;
 
 public class Employee {
 
-	private String name;
+	private final String name;
 	private Integer hours;
 	private Double  valuePerHour;
 	
-	public Employee() {
-		
-	}
 	public Employee(String name, Integer hours, Double valuePerHour) {
 		this.name = name;
 		this.hours = hours;
@@ -39,15 +36,15 @@ public class Employee {
 		return valuePerHour * hours;
 	}
 	
-//	@Override
-//	public String toString() {
-//		StringBuilder sb = new StringBuilder();
-//		sb.append("Employee name: " + getName());
-//		sb.append("\nHours: " + getHours());
-//		sb.append("\nValue per hours: $" + String.format("%.2f", getValuePerHour()));
-//		sb.append("\nPayment: $" + String.format("%.2f", payment()));
-//		return sb.toString();
-//	}
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Employee name: " + getName());
+		sb.append("\nHours: " + getHours());
+		sb.append("\nValue per hours: $" + String.format("%.2f", getValuePerHour()));
+		sb.append("\nPayment: $" + String.format("%.2f", payment()));
+		return sb.toString();
+	}
 	
 	
 }
